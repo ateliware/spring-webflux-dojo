@@ -1,4 +1,4 @@
-package com.ateliware.lab033.webfluxv1.app;
+package com.ateliware.lab033.webfluxv1.app.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -10,6 +10,9 @@ public class TodoList {
     String title;
     String description;
     Boolean status;
+
+    public TodoList() {
+    }
 
     public TodoList(Integer id, String title, String description, Boolean status) {
         this.id = id;
