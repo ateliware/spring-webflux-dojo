@@ -1,28 +1,32 @@
-package com.ateliware.lab033.webfluxv1.app;
+package com.ateliware.lab033.webfluxv1.app.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import java.util.UUID;
 
 @Entity
 public class TodoList {
     @Id
-    Integer id;
+    String id;
     String title;
     String description;
     Boolean status;
 
-    public TodoList(Integer id, String title, String description, Boolean status) {
-        this.id = id;
-        this.title = title;
-        this.description = description;
-        this.status = status;
+    public TodoList() {
     }
 
-    public Integer getId() {
+    public TodoList(String title, String description) {
+        this.id = UUID.randomUUID().toString().replace("-", "");
+        this.title = title;
+        this.description = description;
+        this.status = true;
+    }
+
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 
